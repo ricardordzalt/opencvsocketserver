@@ -28,6 +28,7 @@ io.on('connection', (socket) => {
   socket.emit('direction', 'loading');
 
   socket.on('change-direction', (data) => {
+    console.log('data', data)
     socket.emit('direction', data);
   });
 });
