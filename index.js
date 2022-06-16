@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const socketio = require('socket.io');
 
+const { PORT } = process.env;
+
 const server = http.createServer(app);
 
 const io = socketio(server, {
@@ -11,7 +13,7 @@ const io = socketio(server, {
   }
 });
 
-server.listen(3001);
+server.listen(PORT || 3000);
 
 app.get('/', (req, res) => {
   console.log('homepage');
