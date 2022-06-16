@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Socket.io</title>
+    </head>
+    <body>
+        <h1>Express and socket.io</h1>
+        <div id="news-list"></div>
+        <script src="/socket.io/socket.io.js"></script>
+        <!-- <script src="static/socket.io/node_modules/socket.io-client/socket.io.js"></script> -->
+        <script>
+            var socket = io('http://localhost:3001');
+
+            socket.on('direction', function (data) {
+                console.log('data', data);
+                var div = document.getElementById("news-list");
+                div.innerHTML += "<h3>" + data + "</h3><br>";
+            });
+        </script>
+    </body>
+</html>
