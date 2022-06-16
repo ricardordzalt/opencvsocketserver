@@ -10,7 +10,7 @@
         <script src="/socket.io/socket.io.js"></script>
         <!-- <script src="static/socket.io/node_modules/socket.io-client/socket.io.js"></script> -->
         <script>
-            var socket = io('http://localhost:3001');
+            var socket = io('https://socketopencvtest.herokuapp.com/');
 
             socket.on('direction', function (data) {
                 console.log('data', data);
