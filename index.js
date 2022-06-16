@@ -13,7 +13,7 @@ const io = socketio(server, {
   }
 });
 
-server.listen(PORT || 3000);
+server.listen(PORT || 3002);
 
 app.get('/', (req, res) => {
   console.log('homepage');

@@ -6,7 +6,9 @@
     </head>
     <body>
         <h1>Express and socket.io</h1>
-        <div id="news-list"></div>
+        <div id="news-list" style="min-height: 900px;min-width: 900px">
+            <h1 id="direction" style="margin: auto;">Express and socket.io</h1>
+        </div>
         <script src="/socket.io/socket.io.js"></script>
         <!-- <script src="static/socket.io/node_modules/socket.io-client/socket.io.js"></script> -->
         <script>
@@ -14,7 +16,9 @@
 
             socket.on('direction', function (data) {
                 console.log('data', data);
-                var div = document.getElementById("news-list");
+                var div = document.getElementById("direction");
+                    div.style.backgroundColor = "#00FF00";
+                    div.innerHTML = "Derecha";
                 if(data === 'right'){
                     div.style.backgroundColor = "#00FF00";
                     div.innerHTML = "Derecha";
