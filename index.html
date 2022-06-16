@@ -16,12 +16,12 @@
 
             socket.on('direction', function (data) {
                 var div = document.getElementById("direction");
-                if(data === 'right'){
-                    div.style.backgroundColor = "#00FF00";
-                    div.innerHTML = "Derecha";
-                }else if(data === 'left'){
+                if(data === 'left'){
                     div.style.backgroundColor = "#FF0000";
                     div.innerHTML = "Izquierda";
+                }else if(data === 'right'){
+                    div.style.backgroundColor = "#00FF00";
+                    div.innerHTML = "Derecha";
                 }
             });
         </script>
