@@ -27,9 +27,10 @@ io.on('connection', (socket) => {
 
   socket.emit('direction', 'loading');
 
-});
+  setTimeout(() => socket.emit('direction', 'loaded'), 1000);
 
-io.on('change-direction', (data) => {
-  console.log('data', data)
-  io.emit('direction', data);
+  socket.on('change-direction', (data) => {
+    console.log('data', data)
+    io.emit('direction', data);
+  });
 });
