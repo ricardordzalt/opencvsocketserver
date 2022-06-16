@@ -15,7 +15,13 @@
             socket.on('direction', function (data) {
                 console.log('data', data);
                 var div = document.getElementById("news-list");
-                div.innerHTML += "<h3>" + data + "</h3><br>";
+                if(data === 'right'){
+                    div.style.backgroundColor = "#00FF00";
+                    div.innerHTML = "Derecha";
+                }else if(data === 'left'){
+                    div.style.backgroundColor = "#FF0000";
+                    div.innerHTML = "Izquierda";
+                }
             });
         </script>
     </body>
