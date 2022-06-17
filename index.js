@@ -3,14 +3,7 @@ const express = require('express');
 const app = express();
 const socketio = require('socket.io');
 const cloudinary = require('cloudinary').v2;
-require('dotenv').config()
-
-cloudinary.config({
-  cloud_name: 'sample',
-  api_key: '874837483274837',
-  api_secret: 'a676b67565c6767a6767d6767f676fe1',
-  secure: true
-});
+require('dotenv').config();
 
 const { PORT } = process.env;
 
