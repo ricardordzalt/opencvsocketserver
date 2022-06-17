@@ -41,6 +41,4 @@ io.on('connection', (socket) => {
     console.log('image', image)
     //io.emit('direction', data);
   });
-
-  socket.on('')
 });
