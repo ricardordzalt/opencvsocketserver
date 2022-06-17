@@ -3,6 +3,14 @@ const express = require('express');
 const app = express();
 const socketio = require('socket.io');
 const cloudinary = require('cloudinary').v2;
+require('dotenv').config()
+
+cloudinary.config({
+  cloud_name: 'sample',
+  api_key: '874837483274837',
+  api_secret: 'a676b67565c6767a6767d6767f676fe1',
+  secure: true
+});
 
 const { PORT } = process.env;
 
@@ -38,5 +46,13 @@ io.on('connection', (socket) => {
 
   socket.on('upload', (image) => {
     io.emit('change-image', image);
+    cloudinary.uploader.upload(image, {
+      overwrite: true,
+      invalidate: true,
+      width: 600, height: 420
+    },
+      function (error, result) {
+        console.log('err', error);
+      });
   });
 });
