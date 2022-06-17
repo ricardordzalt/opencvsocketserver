@@ -32,13 +32,11 @@ io.on('connection', (socket) => {
   setTimeout(() => socket.emit('direction', 'loaded'), 1000);
 
   socket.on('change-direction', (data) => {
-    console.log('data', data)
     io.emit('direction', data);
   });
 
 
   socket.on('upload', (image) => {
-    console.log('image', image)
-    //io.emit('direction', data);
+    io.emit('change-image', image);
   });
 });
